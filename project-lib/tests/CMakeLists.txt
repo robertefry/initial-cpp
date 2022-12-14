@@ -19,7 +19,7 @@ add_test(NAME ${TESTS_NAME} COMMAND $<TARGET_FILE:${TESTS_NAME}>)
 
 # ---- compiler targets ----
 
-target_include_directories(${BINARY_NAME}
+target_include_directories(${TESTS_NAME}
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
