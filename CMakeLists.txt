@@ -10,7 +10,7 @@ project("initial-cpp" VERSION "2.0.0" LANGUAGES "C" "CXX"
 set(CMAKE_CXX_STANDARD "20")
 
 # ---- add dependencies via CPM ----
-# see https://github.com/TheLartians/CPM.cmake for more info
+# see https://github.com/cpm-cmake/CPM.cmake for more info
 include(.cmake/get_cpm.cmake)
 
 # FIXME: change to match your project dependency requirements
