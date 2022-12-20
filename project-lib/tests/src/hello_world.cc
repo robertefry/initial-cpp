@@ -1,9 +1,9 @@
 
-#include <gtest/gtest.h>
+#include <catch2/catch_all.hpp>
 
 #include "hello_world.hh"
 
-TEST(PROJECT_LIB,HELLO_WORLD)
+TEST_CASE("GetHelloWorld() returns \"Hello, World!\"")
 {
-    EXPECT_EQ(GetHelloWorld(),"Hello, World!");
+    REQUIRE( GetHelloWorld() == "Hello, World!" );
 }

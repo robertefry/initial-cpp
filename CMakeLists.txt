@@ -18,9 +18,8 @@ CPMAddPackage(NAME "fmt"
   GITHUB_REPOSITORY "fmtlib/fmt" GIT_TAG "9.1.0"
   OPTIONS "FMT_INSTALL NO"
 )
-CPMAddPackage(NAME "googletest"
-  GITHUB_REPOSITORY "google/googletest" GIT_TAG "release-1.12.1"
-  OPTIONS "INSTALL_GTEST OFF" "gtest_force_shared_crt"
+CPMAddPackage(NAME "Catch2"
+  GITHUB_REPOSITORY "catchorg/Catch2" GIT_TAG "v3.2.1"
 )
 
 # ---- project units ----
