@@ -23,7 +23,7 @@ CPMAddPackage(NAME "Catch2"
 )
 
 # ---- project units ----
-include(.cmake/tools.cmake) # toolkit for buildsystem features
+include(.cmake/build_tools.cmake) # toolkit for buildsystem features
 
 # FIXME: change to match your project compilation units
 add_subdirectory(project-lib)
@@ -43,6 +43,7 @@ packageProject(
 )
 
 # ---- cmake & compiler options ----
+include(.cmake/build_type.cmake)
 
 # dissallow in-source builds
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
