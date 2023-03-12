@@ -21,3 +21,27 @@ Heavily inspired by [ModernCppStarter](https://github.com/TheLartians/ModernCppS
 * Code coverage via [codecov](https://codecov.io/).
 * Code formatting enforced by [clang-format](https://clang.llvm.org/docs/ClangFormat.html).
 * Automatic documentation via [Doxygen](https://www.doxygen.nl/).
+
+# How do I use `initial-cpp`?
+
+To add this build system to an already existing project, you will need to merge a version of initial-cpp into an appropriate local branch. Follow the steps below.
+
+1. Add the `initial-cpp` remote to your project, here we call it `build`.
+    ```
+    $ git remote add build https://github.com/robertefry/initial-cpp
+    ```
+
+2. Fetch the version of initial-cpp you want to use, here we fetch the tag `v2.2.0` as `build-2.2.0`.
+    ```
+    $ git fetch --no-tags build refs/tags/v2.2.0:refs/tags/build-2.2.0
+    ```
+
+3. Finally, we merge this tag into the branch we have presently checked out.
+    ```
+    $ git merge --allow-unrelated-histories build-2.2.0
+    ```
+
+4. (Optionally), we can push the `build-2.2.0` tag to the project remote, here called `origin`.
+    ```
+    $ git push origin build-2.2.0
+    ```
