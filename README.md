@@ -7,8 +7,8 @@ Heavily inspired by [ModernCppStarter](https://github.com/TheLartians/ModernCppS
 
 ## Features
 
-* Conformant to [Modern CMake practices](https://github.com/TheLartians/ModernCppStarter).
-* Total separation of project units (libraries/executables/etc...).
+* Conformant to [Modern CMake practices](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/).
+* Total separation of project units (libraries, executables, etc...).
 * Reproducible dependency management via [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake).
 * Integrated [Catch2](https://github.com/catchorg/Catch2) testing suite.
 * Integrated LLVM linting via [clang-tidy](https://clang.llvm.org/extra/clang-tidy/).
