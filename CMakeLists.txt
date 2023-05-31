@@ -12,12 +12,16 @@ set(CMAKE_CXX_STANDARD "20")
 # ---- add dependencies via CPM ----
 # see https://github.com/cpm-cmake/CPM.cmake for more info
 include(.cmake/get_cpm.cmake)
+include(.cmake/declare_system_libraries.cmake)
 
 # FIXME: change to match your project dependency requirements
+
 CPMAddPackage(NAME "fmt"
   GITHUB_REPOSITORY "fmtlib/fmt" GIT_TAG "9.1.0"
   OPTIONS "FMT_INSTALL NO"
 )
+declare_system_libraries(fmt::fmt)
+
 CPMAddPackage(NAME "Catch2"
   GITHUB_REPOSITORY "catchorg/Catch2" GIT_TAG "v3.3.2"
 )
