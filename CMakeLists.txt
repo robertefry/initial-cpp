@@ -19,7 +19,7 @@ CPMAddPackage(NAME "fmt"
   OPTIONS "FMT_INSTALL NO"
 )
 CPMAddPackage(NAME "Catch2"
-  GITHUB_REPOSITORY "catchorg/Catch2" GIT_TAG "v3.2.1"
+  GITHUB_REPOSITORY "catchorg/Catch2" GIT_TAG "v3.3.2"
 )
 
 # ---- project units ----
