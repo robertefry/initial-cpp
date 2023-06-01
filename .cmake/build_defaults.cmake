@@ -46,7 +46,6 @@ function(default_build_type build_type)
   else()
     message(STATUS "Found build type set to '${CMAKE_BUILD_TYPE}'.")
   endif()
-  message(STATUS "CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE})
 
   if(NOT CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_CONFIGURATION_TYPES ${build_type}
@@ -58,7 +57,6 @@ function(default_build_type build_type)
   else()
     message(STATUS "Found configuration types set to '${CMAKE_CONFIGURATION_TYPES}'.")
   endif()
-  message(STATUS "CMAKE_CONFIGURATION_TYPES="${CMAKE_CONFIGURATION_TYPES})
 
 endfunction()
 default_build_type("Release")
