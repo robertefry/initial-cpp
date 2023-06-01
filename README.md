@@ -3,7 +3,7 @@
 
 Setting up a new C++ project usually requires more time than the endurance of ideas. Even more so for modern C++ projects which require static analysis checks, test suites, documentation, and a slew of other requirements. This template is here to streamline the process of beginning a new C++ project.
 
-Heavily inspired by [ModernCppStarter](https://github.com/TheLartians/ModernCppStarter) and [cpp-best-practices](https://github.com/cpp-best-practices).
+Heavily inspired by [cpp-best-practices](https://github.com/cpp-best-practices)'s [cmake_template](https://github.com/cpp-best-practices/cmake_template) and [cppbestpractices](https://github.com/cpp-best-practices/cppbestpractices).
 
 ## Features
 
