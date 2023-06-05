@@ -24,13 +24,12 @@ include(.cmake/declare_system_libraries.cmake)
 
 CPMAddPackage(NAME "fmt"
   GITHUB_REPOSITORY "fmtlib/fmt" GIT_TAG "10.0.0"
-  OPTIONS "FMT_INSTALL NO"
-)
+  OPTIONS "FMT_INSTALL NO")
 declare_system_libraries(fmt::fmt)
 
 CPMAddPackage(NAME "Catch2"
-  GITHUB_REPOSITORY "catchorg/Catch2" VERSION "3.3.2"
-)
+  GITHUB_REPOSITORY "catchorg/Catch2" VERSION "3.3.2")
+declare_system_libraries(Catch2::Catch2 Catch2::Catch2WithMain)
 
 # ---- project targets ----
 include(.cmake/build_defaults.cmake) # toolkit of buildsystem　defaults
