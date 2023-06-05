@@ -56,11 +56,13 @@ if(USE_CLANG_TIDY)
   endif()
 endif()
 
-if(USE_CLANG_TIDY AND CLANG_TIDY)
-  foreach(LANG "C" "CXX" "OBJC" "OBJCXX")
-    set(CMAKE_${LANG}_CLANG_TIDY ${CLANG_TIDY})
-  endforeach()
-endif()
+function(try_target_enable_clang_tidy target)
+  if(USE_CLANG_TIDY AND CLANG_TIDY)
+    foreach(LANG "C" "CXX" "OBJC" "OBJCXX")
+      set_target_properties(${target} PROPERTIES ${LANG}_CLANG_TIDY ${CLANG_TIDY})
+    endforeach()
+  endif()
+endfunction()
 
 # ---- sanitizers ----
 # This is a list of llvm sanitizers used by declaring the USE_SANITIZERS CMake

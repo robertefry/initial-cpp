@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.12)
 
 set(LIBRARY_NAME "project-lib")
 add_library(${LIBRARY_NAME} SHARED "")
+declare_project_target(${LIBRARY_NAME})
 
 # ---- compiler targets ----
 

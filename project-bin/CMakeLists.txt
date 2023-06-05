@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.5)
 
 set(BINARY_NAME "project-bin")
 add_executable(${BINARY_NAME} "")
+declare_project_targets(${BINARY_NAME})
 
 target_link_libraries(${BINARY_NAME} PUBLIC project-lib)
 

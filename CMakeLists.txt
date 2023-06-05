@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.7.2)
 
 # ---- project ----
 include(.cmake/project_options.cmake) # toolkit of project options
+include(.cmake/declare_project_targets.cmake)
 
 # FIXME: change to match your project definition
 project("initial-cpp" VERSION "2.0.0" LANGUAGES "C" "CXX"
