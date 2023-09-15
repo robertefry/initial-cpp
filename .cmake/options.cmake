@@ -126,7 +126,7 @@ if(OPT_USE_CLANG_TIDY AND NOT FOUND_CLANG_TIDY)
     set(FOUND_CLANG_TIDY TRUE)
     message(STATUS "Found clang-tidy: ${CLANG_TIDY}")
   else()
-    message(SEND_ERROR "Cannot enable clang-tidy, executable not found!")
+    message(WARNING "Cannot enable clang-tidy, executable not found!")
   endif()
 endif()
 
