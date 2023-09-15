@@ -4,12 +4,12 @@
 
 include(.cmake/options.cmake)
 
-function(declare_project_target target)
-  target_enable_clang_tidy(${target})
+function(opt_declare_project_target target)
+  opt_target_enable_clang_tidy(${target})
 endfunction()
 
-function(declare_project_targets targets)
+function(opt_declare_project_targets targets)
   foreach(target ${targets})
-    declare_project_target(${target})
+    opt_declare_project_target(${target})
   endforeach()
 endfunction()

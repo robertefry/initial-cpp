@@ -132,7 +132,7 @@ endif()
 
 # We need to enable clang-tidy for each target individually, to avoid running
 # static analysis on code we can't control (e.g. cpm packages)
-function(target_enable_clang_tidy target)
+function(opt_target_enable_clang_tidy target)
   if(OPT_USE_CLANG_TIDY AND CLANG_TIDY)
     foreach(LANG "C" "CXX" "OBJC" "OBJCXX")
       set_target_properties(${target} PROPERTIES ${LANG}_CLANG_TIDY ${CLANG_TIDY})
