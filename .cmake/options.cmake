@@ -55,17 +55,20 @@ endif()
 set(OPT_USE_OUTPUT_DIR OFF
   CACHE BOOL "Place compiled binaries in a top-level output directory. (off by default)")
 
-set(OPT_OUTPUT_DIR_LIB "${CMAKE_BINARY_DIR}/output/lib"
-  CACHE STRING "The directory to place output binaries.")
 set(OPT_OUTPUT_DIR_BIN "${CMAKE_BINARY_DIR}/output/bin"
   CACHE STRING "The directory to place output libraries.")
+set(OPT_OUTPUT_DIR_LIB "${CMAKE_BINARY_DIR}/output/lib"
+  CACHE STRING "The directory to place output binaries.")
 
 if(OPT_USE_OUTPUT_DIR)
   if(NOT CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${USE_OUTPUT_DIR_BIN})
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OPT_OUTPUT_DIR_BIN})
   endif()
   if(NOT CMAKE_LIBRARY_OUTPUT_DIRECTORY)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${USE_OUTPUT_DIR_LIB})
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${OPT_OUTPUT_DIR_LIB})
+  endif()
+  if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${OPT_OUTPUT_DIR_LIB})
   endif()
 endif()
 
