@@ -1,7 +1,7 @@
 
 # Initial CPP
 
-Setting up a new C++ project usually requires more time than the endurance of ideas. Even more so for modern C++ projects which require static analysis checks, test suites, documentation, and a slew of other requirements. This template is here to streamline the process of beginning a new C++ project.
+Setting up a new C++ project usually requires more time than the endurance of ideas. Even more so for modern C++ projects, which requires a rigorous build-test-document-integrate cycle. This template aims to streamline the process of beginning a new C++ project.
 
 Heavily inspired by [cpp-best-practices](https://github.com/cpp-best-practices)'s [cmake_template](https://github.com/cpp-best-practices/cmake_template) and [cppbestpractices](https://github.com/cpp-best-practices/cppbestpractices).
 
@@ -24,6 +24,13 @@ Heavily inspired by [cpp-best-practices](https://github.com/cpp-best-practices)'
 
 # How do I use `initial-cpp`?
 
+To setup a new C++ project from this template project, you will need to clone the master branch of this repository.
+
+1. In a new directory, clone this repository.
+    ```
+    $ git clone https://github.com/robertefry/initial-cpp MyProject
+    ```
+
 To add this build system to an already existing project, you will need to merge a version of initial-cpp into an appropriate local branch. Follow the steps below.
 
 1. Add the `initial-cpp` remote to your project, here we call it `build`.
@@ -45,3 +52,4 @@ To add this build system to an already existing project, you will need to merge 
     ```
     $ git push origin build-2.2.0
     ```
+Finally, to configure initial-cpp for your project, you will need to search the top-level CMakeLists.txt file for "FIXME:" tags, and complete the tasks outlined.

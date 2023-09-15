@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.7.2)
 
 # ---- project ----
-include(.cmake/project_options.cmake) # toolkit of project options
+include(.cmake/options.cmake)
 include(.cmake/declare_project_targets.cmake)
 
 # FIXME: change to match your project definition
@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD "20")
 # -Wpedantic being enabled and -std=c++20 and -std=gnu++20 for example
 # when compiling with PCH enabled
 set(CMAKE_CXX_EXTENSIONS OFF)
-
+#
 # ---- add dependencies via CPM ----
 # see https://github.com/cpm-cmake/CPM.cmake for more info
 include(.cmake/get_cpm.cmake)
@@ -33,7 +33,6 @@ CPMAddPackage(NAME "Catch2"
 declare_system_libraries(Catch2::Catch2 Catch2::Catch2WithMain)
 
 # ---- project targets ----
-include(.cmake/build_defaults.cmake) # toolkit of buildsystem　defaults
 
 # FIXME: change to match your project compilation units
 add_subdirectory(project-lib)
