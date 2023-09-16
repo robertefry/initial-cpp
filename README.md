@@ -8,11 +8,12 @@ Heavily inspired by [cpp-best-practices](https://github.com/cpp-best-practices)'
 ## Features
 
 * Conformant to [Modern CMake practices](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/).
-* Total separation of project units (libraries, executables, etc...).
+* Total separation of targets (libraries, executables, etc...).
 * Reproducible dependency management via [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake).
 * Integrated [Catch2](https://github.com/catchorg/Catch2) testing suite.
 * Integrated LLVM linting via [clang-tidy](https://clang.llvm.org/extra/clang-tidy/).
 * Integrated LLVM sanitizer checking.
+* Automatic documentation via [Doxygen](https://www.doxygen.nl/).
 * Installable targets via [PackageProject.cmake](https://github.com/TheLartians/PackageProject.cmake).
 
 ## Features In-Progress
@@ -20,7 +21,6 @@ Heavily inspired by [cpp-best-practices](https://github.com/cpp-best-practices)'
 * Continuous integration via [GitHub Actions](https://help.github.com/en/actions/).
 * Code coverage via [codecov](https://codecov.io/).
 * Code formatting enforced by [clang-format](https://clang.llvm.org/docs/ClangFormat.html).
-* Automatic documentation via [Doxygen](https://www.doxygen.nl/).
 
 # How do I use `initial-cpp`?
 
