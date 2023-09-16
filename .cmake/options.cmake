@@ -168,3 +168,44 @@ if(OPT_SANITIZERS)
   include(${cmake-scripts_SOURCE_DIR}/sanitizers.cmake)
 
 endif()
+
+#
+# Doxygen
+#
+set(OPT_USE_DOXYGEN ON
+  CACHE BOOL "Generate documentation on Release builds. (on by default)")
+
+find_package(Doxygen)
+
+if(OPT_USE_DOXYGEN)
+  if(DOXYGEN_FOUND)
+    message(STATUS "Found Doxygen: ${DOXYGEN_EXECUTABLE} version ${DOXYGEN_VERSION}")
+  else()
+    message(WARNING "Cannot enable Doxygen, executable not found!")
+  endif()
+endif()
+
+function(opt_target_enable_doxygen target)
+
+  set(DOXYGEN_PROJECT_NAME "${PROJECT_NAME} (${target})")
+  set(DOXYGEN_PROJECT_VERSION "${PROJECT_VERSION}")
+  set(DOXYGEN_PROJECT_DESCRIPTION "${PROJECT_DESCRIPTION}")
+  set(DOXYGEN_INPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+  set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
+  file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
+
+  set(DOXYFILE_IN ${CMAKE_SOURCE_DIR}/.doxyfile-in)
+  set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/.doxyfile)
+  configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+  add_custom_target(${target}-docs ALL
+    COMMAND ${DOXYGEN_EXECUTABLE} -q ${DOXYFILE_OUT}
+    WORKING_DIRECTORY ${DOXYGEN_OUTPUT_DIR}
+    COMMENT "Generating documentation for ${target}..."
+    VERBATIM)
+
+  if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_dependencies(${target} ${target}-docs)
+  endif()
+
+endfunction()
