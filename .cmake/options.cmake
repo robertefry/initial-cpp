@@ -195,7 +195,7 @@ function(opt_target_enable_doxygen target)
   file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
   set(DOXYFILE_IN ${CMAKE_SOURCE_DIR}/.doxyfile-in)
-  set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/.doxyfile)
+  set(DOXYFILE_OUT ${DOXYGEN_OUTPUT_DIR}/.doxyfile)
   configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 
   add_custom_target(${target}-docs ALL
