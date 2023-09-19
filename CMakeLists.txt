@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD "20")
 # between -std=c++20 and -std=gnu++20 when -Wpedantic is enabled. for example,
 # when compiling with PCH (pre-compiled headers) enabled
 set(CMAKE_CXX_EXTENSIONS OFF)
-#
+
 # ---- add dependencies via CPM ----
 # see https://github.com/cpm-cmake/CPM.cmake for more info
 include(.cmake/get_cpm.cmake)
