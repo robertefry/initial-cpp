@@ -12,8 +12,8 @@ project("initial-cpp" VERSION "2.6.1" LANGUAGES "C" "CXX"
 set(CMAKE_CXX_STANDARD "20")
 
 # Strongly encouraged to globally disable compiler extensions to avoid conflicts
-# between -std=c++20 and -std=gnu++20 when -Wpedantic is enabled. for example,
-# when compiling with PCH (pre-compiled headers) enabled
+# between -std=c++20 and -std=gnu++20 when -Wpedantic is enabled.
+set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # ---- add dependencies via CPM ----
