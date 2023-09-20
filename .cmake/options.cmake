@@ -26,6 +26,39 @@ if (OPT_USE_RECOMMENDED_COMPILER_WARNINGS)
 endif()
 
 #
+# Symbol export
+#
+set(OPT_EXPORT_ALL_SYMBOLS OFF
+  CACHE BOOL "Export all linker symbols. (off by default)")
+set(OPT_GENERATE_EXPORT_HEADER ON
+  CACHE BOOL "Generate a header defining symbol export macros. (on by default)")
+
+if(OPT_EXPORT_ALL_SYMBOLS)
+  message(STATUS "Enabling all symbol export by default...")
+  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+else()
+  message(STATUS "Disabling all symbol export by default...")
+  set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+  set(CMAKE_VISIBILITY_INLINES_HIDDEN yes)
+endif()
+
+if(OPT_GENERATE_EXPORT_HEADER)
+  include(GenerateExportHeader)
+endif()
+
+# TODO: Fix Clang-Tidy running on generated code
+function(opt_target_generate_export_header target) # library only
+  get_target_property(target_type ${target} TYPE)
+  if(OPT_GENERATE_EXPORT_HEADER AND target_type MATCHES ".*_LIBRARY")
+    generate_export_header(${target}
+      EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/generated/${target}_export.h)
+    target_include_directories(${target} PUBLIC
+      $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
+      $<INSTALL_INTERFACE:generated>)
+  endif()
+endfunction()
+
+#
 # In-source builds
 #
 set(OPT_DISALLOW_IN_SOURCE_BUILDS ON

@@ -7,6 +7,7 @@ include(.cmake/options.cmake)
 function(opt_declare_project_target target)
   opt_target_enable_clang_tidy(${target})
   opt_target_enable_doxygen(${target})
+  opt_target_generate_export_header(${target})
 endfunction()
 
 function(opt_declare_project_targets targets)
