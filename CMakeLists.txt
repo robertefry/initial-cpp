@@ -26,7 +26,7 @@ include(.cmake/declare_system_libraries.cmake)
 CPMAddPackage(NAME "fmt"
   GITHUB_REPOSITORY "fmtlib/fmt" GIT_TAG "10.0.0"
   OPTIONS "FMT_INSTALL NO")
-opt_declare_system_libraries(fmt::fmt)
+opt_declare_system_libraries(fmt::fmt fmt::fmt-header-only)
 
 CPMAddPackage(NAME "Catch2"
   GITHUB_REPOSITORY "catchorg/Catch2" VERSION "3.3.2")
