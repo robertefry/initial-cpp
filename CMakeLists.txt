@@ -5,7 +5,7 @@ include(.cmake/options.cmake)
 include(.cmake/declare_project_targets.cmake)
 
 # FIXME: change to match your project definition
-project("initial-cpp" VERSION "2.6.1" LANGUAGES "C" "CXX"
+project("initial-cpp" VERSION "2.7.0" LANGUAGES "C" "CXX"
   HOMEPAGE_URL "https://github.com/robertefry/initial-cpp"
   DESCRIPTION "An initial C++ project to source other projects from.")
 
