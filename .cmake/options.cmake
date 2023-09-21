@@ -46,13 +46,12 @@ if(OPT_GENERATE_EXPORT_HEADER)
   include(GenerateExportHeader)
 endif()
 
-# TODO: Fix Clang-Tidy running on generated code
 function(opt_target_generate_export_header target) # library only
   get_target_property(target_type ${target} TYPE)
   if(OPT_GENERATE_EXPORT_HEADER AND target_type MATCHES ".*_LIBRARY")
     generate_export_header(${target}
       EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/generated/${target}_export.h)
-    target_include_directories(${target} PUBLIC
+    target_include_directories(${target} SYSTEM PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
       $<INSTALL_INTERFACE:generated>)
   endif()
