@@ -1,4 +1,6 @@
 
+include_guard(GLOBAL)
+
 # This file contains a list of compiler tools and options that can be activated
 # on-demand. Each tool is enabled during the configuration by using the cache
 # variables prefixed by `OPT_`. For example; `-DOPT_<KEY>=<VALUE>`.
